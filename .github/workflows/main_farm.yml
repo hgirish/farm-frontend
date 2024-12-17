@@ -8,8 +8,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-env:
-  API_URL: ${{ env.API_URL}}
+
 
 jobs:
   build:
@@ -22,6 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
+        env: 
+          API_URL: ${{API_URL}}
 
       - name: npm install, build, and test
         run: |
