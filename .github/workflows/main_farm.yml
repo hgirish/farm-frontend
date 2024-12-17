@@ -28,6 +28,8 @@ jobs:
           API_URL: ${{secrets.API_URL}}
 
       - name: npm install, build, and test
+        env: 
+          API_URL: ${{secrets.API_URL}}
         run: |
           echo secrets.API_URL:  ${{ secrets.API_URL }}
           npm install
