@@ -4,7 +4,7 @@
 name: Build and deploy Node.js app to Azure Web App - farm
 
 env:
-  API_URL: ${{secrets.API_URL}}
+  API_URL: ${{env.API_URL}}
 
 on:
   push:
@@ -25,16 +25,16 @@ jobs:
         with:
           node-version: '20.x'
         env: 
-          API_URL: ${{secrets.API_URL}}
+          API_URL: ${{env.API_URL}}
 
       - name: npm install, build, and test        
         run: |
-          echo secrets.API_URL:  ${{ secrets.API_URL }}
+          echo env.API_URL:  ${{ env.API_URL }}
           npm install
           npm run build --if-present
           npm run test --if-present
         env: 
-          API_URL: ${{secrets.API_URL}}
+          API_URL: ${{env.API_URL}}
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
