@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react'
 
+/*
 export async function generateStaticParams(){
   const cars = await fetch(
     `${process.env.API_URL}/cars/`
@@ -22,7 +23,7 @@ export async function generateMetadata({params},  parent) {
     title
   }
 }
-
+*/
 const CarDetails = async ({params}) => {
  const {id} = await params
   const carId = await id;
