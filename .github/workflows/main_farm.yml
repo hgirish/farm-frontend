@@ -68,6 +68,6 @@ jobs:
           app-name: 'farm'
           slot-name: 'Production'
           package: .
-        end:
+        env:
           API_URL: ${{ secrets.API_URL }}
           
