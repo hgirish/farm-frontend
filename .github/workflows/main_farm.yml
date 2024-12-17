@@ -69,5 +69,5 @@ jobs:
           slot-name: 'Production'
           package: .
         end:
-          APP_URL: ${{ secrets.APP_URL }}
+          API_URL: ${{ secrets.API_URL }}
           
