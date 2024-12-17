@@ -27,14 +27,14 @@ jobs:
         env: 
           API_URL: ${{secrets.API_URL}}
 
-      - name: npm install, build, and test
-        env: 
-          API_URL: ${{secrets.API_URL}}
+      - name: npm install, build, and test        
         run: |
           echo secrets.API_URL:  ${{ secrets.API_URL }}
           npm install
           npm run build --if-present
           npm run test --if-present
+        env: 
+          API_URL: ${{secrets.API_URL}}
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
