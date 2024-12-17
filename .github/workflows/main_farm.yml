@@ -3,6 +3,9 @@
 
 name: Build and deploy Node.js app to Azure Web App - farm
 
+env:
+  API_URL: ${{env.API_URL}}
+
 on:
   push:
     branches:
