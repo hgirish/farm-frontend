@@ -18,7 +18,7 @@ const Cars = async () => {
            
             <div>
                 {cars.map(car => (
-                    <div key={car._id} className="m-4 bg-white p-2">
+                    <div key={car._id} className="m-5 bg-white p-2">
                         <Link href={`/cars/${car._id}`}>
                             <p>{car.brand} {car.make} from {car.year}</p>
                         </Link>
