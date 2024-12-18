@@ -1,5 +1,8 @@
 name: Azure Static Web Apps CI/CD
 
+env:
+  API_URL: ${{vars.API_URL}}
+
 on:
   push:
     branches:
